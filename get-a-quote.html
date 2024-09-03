@@ -1,4 +1,4 @@
-9<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,25 +35,23 @@
         }
         .status-container {
             position: relative;
-            height: 2.5em; /* Adjust based on the height of your text */
             overflow: hidden;
+            height: 1.5em; /* Adjust based on text size */
+            font-family: monospace; /* Ensure consistent character width */
         }
         .status-text {
-            position: absolute;
-            width: 100%;
-            animation: cycleText 6s infinite; /* Duration of the animation */
+            display: inline-block;
+            white-space: nowrap;
+            border-right: 0.15em solid black; /* Typing cursor effect */
+            animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
         }
-        .status-text p {
-            margin: 0;
-            font-size: 1em; /* Adjust font size as needed */
-            line-height: 1.5em; /* Ensure spacing between lines */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
         }
-        @keyframes cycleText {
-            0% { transform: translateY(0); }
-            25% { transform: translateY(-100%); }
-            50% { transform: translateY(-200%); }
-            75% { transform: translateY(-300%); }
-            100% { transform: translateY(-400%); }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
         }
     </style>
 
@@ -180,9 +178,9 @@
                         <h3>Location</h3>
                         <div class="status-container">
                             <div class="status-text">
-                                <p>Enroute: through Cargo ship</p>
-                                <p>Confirmed</p>
-                                <p>In Transit</p>
+                                Enroute: through Cargo ship<br>
+                                Confirmed<br>
+                                In Transit
                             </div>
                         </div>
                     </div>
