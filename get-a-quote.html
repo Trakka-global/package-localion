@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+9<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,6 +27,35 @@
 
   <!-- Main CSS File -->
   <link href="./main.css" rel="stylesheet">
+
+  <style>
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        .status-container {
+            position: relative;
+            height: 2.5em; /* Adjust based on the height of your text */
+            overflow: hidden;
+        }
+        .status-text {
+            position: absolute;
+            width: 100%;
+            animation: cycleText 6s infinite; /* Duration of the animation */
+        }
+        .status-text p {
+            margin: 0;
+            font-size: 1em; /* Adjust font size as needed */
+            line-height: 1.5em; /* Ensure spacing between lines */
+        }
+        @keyframes cycleText {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-100%); }
+            50% { transform: translateY(-200%); }
+            75% { transform: translateY(-300%); }
+            100% { transform: translateY(-400%); }
+        }
+    </style>
 
 
 </head>
@@ -141,6 +170,26 @@
       </div>
 
     </section><!-- /Get A Quote Section -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-geo-alt flex-shrink-0"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <div class="status-container">
+                            <div class="status-text">
+                                <p>Enroute: through Cargo ship</p>
+                                <p>Confirmed</p>
+                                <p>In Transit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
   </main>
 
